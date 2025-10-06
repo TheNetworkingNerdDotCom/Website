@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheNetworkingNerd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="content">
+    <h1>The Networking Nerd dot com!</h1>
+    <h2 class="heading">Spanning Tree Protocol</h2>
+    <h3>What is Spanning Tree Protocol and why do we need it?</h3>
+    <span>Spanning Tree Protocol (STP) is a protocol whose purpose is to prevent loops within Layer 2 networks. To
+      understand why we need something like STP, let's take a scenario below that uses three interconnected
+      switches. PC1 wants to communicate with a host that has the IP address of 192.168.1.200.
+      In order for PC1 to find the hosts MAC address and communicate at layer 2, it will send out an ARP request.
+      ARP requests have a destination MAC Address of FF:FF:FF:FF:FF:FF, which is known as a broadcast frame.
+    </span>
+    <ul>
+      <li>1 - PC1 sends the ARP request to find out the who has the IP address 192.168.1.200.</li>
+      <li>2 - SW1 broadcasts/floods the frame out of all ports except the one it was received on. The idea is a host on
+        the network will reply saying, "Hey, I have IP 192.168.1.200, my MAC Address
+        is MA:DE:UP:AD:DR:ES"</li>
+      <li>3 - SW2 floods the frame to PC2 & SW3. SW3 floods the frame to PC3 & SW2.</li>
+      <li>4 - SW2 & SW3 both receive frames from each other, they treat these as new frames and both flooded to the
+        respective PCs and back up to SW1.</li>
+      <li>5 - SW1 receives both frames, flooding both to PC1, and one frame each to the opposite switch it was received
+        from.</li>
+    </ul>
+    <span>Steps 2 -> 5 continue indefinitely, creating what's known as a broadcast storm.</span>
+    <img src="ARP request example with hosts and lines.png">
+    <span>Now, you might be thinking: "What happens when the switch eventually learns the MAC Address of 192.168.1.200?
+      Won't the frames stop because the host is known?" In short - no. Even if PC2 replies announcing its MAC Address,
+      by this point it's too late. The loop is already inside the
+      network and what you need to remember is each time a switch receives one of these frames, it treats it as new,
+      as if it's never seen it before. And because these are broadcast frames, this means the switches will
+      continue to flood them out of all ports.
+    </span>
+    <span class="break">Hopefully, you can see why we need something to prevent loops in the network. Aside broadcast
+      storms rapidly amplifying traffic and bringing the network to a halt, there are two more issues
+      that occur when STP isn't used, which I'll explain below:</span>
+    <span class="subheading">MAC table instability</span>
+    <span>Switches learn where MAC Addresses are based on the source MAC address in each frame and the port that frame
+      was received on. When a frame loops through the network, the switch keeps receiving source MAC Addresses
+      from different ports, causing the switch to constantly and often incorrectly update its MAC Address table.
+    </span>
+    <span class="subheading">Multiple frame transmission</span>
+    <span>This happens when multiple copies of the same frame are delivered to a host, consuming unnecessary bandwidth
+      and potentially causing communication errors.</span>
+    <span></span>
+  </div>
+
+</body>
+
+</html>
