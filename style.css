@@ -2,16 +2,13 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-span {
-  display: block;
-}
-
 .indent {
   text-indent: 50px;
 }
 
 body {
   font-size: 18px;
+  margin: auto;
 }
 
 .content {
@@ -28,4 +25,83 @@ body {
 .break {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.banner {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #444444;
+  color: white;
+  padding: 20px;
+  margin: auto;
+}
+
+.content-main {
+  text-align: center;
+  padding: 20px;
+  margin: 0px;
+  font-size: 24px;
+}
+
+.content-items {
+  display: block;
+  color: black;
+  padding: 20px;
+}
+
+.navbar {
+  text-align: center;
+  background-color: #708090;
+  letter-spacing: 5px;
+  word-spacing: 25px;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+}
+
+ul {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.content-items:hover {
+  color: #409cff;
+}
+
+.nav-forward {
+  color: #ffffff;
+  background-color: #708090;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #444444;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.return {
+  color: black;
 }
