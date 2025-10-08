@@ -132,9 +132,15 @@ button {
 }
 
 .backforward {
+  color: #000000 !important;
+  /* Enforce visible black text */
+  background-color: #ffffff;
+  /* Prevent blending */
   text-decoration: none;
-  color: #000;
-  background-color: #fff;
+  font-weight: 500;
+  /* optional for visibility */
+  -webkit-text-fill-color: #000000;
+  /* Chrome/Safari text rendering fix */
 }
 
 .nav-end {
