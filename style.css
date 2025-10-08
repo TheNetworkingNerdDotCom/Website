@@ -134,6 +134,7 @@ button {
 .backforward {
   display: inline-block;
   text-decoration: none;
+  color: black;
 }
 
 .nav-end {
