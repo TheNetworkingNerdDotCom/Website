@@ -24,12 +24,11 @@ body {
 
 .break {
   padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .banner {
   text-align: center;
-  font-size: 28px;
+  font-size: clamp(18px, 4vw, 26px);
   font-weight: bold;
   background-color: #444444;
   color: white;
@@ -50,26 +49,18 @@ body {
   padding: 20px;
 }
 
-.navbar {
-  text-align: center;
-  background-color: #708090;
-  letter-spacing: 5px;
-  word-spacing: 25px;
-  padding: 20px;
-  color: rgb(0, 0, 0);
-}
-
 ul {
   margin: 0px;
 }
 
-a {
+
+.navbar a {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease-in-out;
 }
 
-a:hover {
+.navbar a:hover {
   color: rgb(0, 0, 0);
 }
 
@@ -104,4 +95,48 @@ footer {
 
 .return {
   color: black;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #708090;
+  padding: 10px;
+  gap: 10px;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 5px 10px;
+  text-align: center;
+  min-width: 80px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: black;
+}
+
+.answer {
+  display: none;
+}
+
+button {
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #708090;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.backforward {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-end {
+  display: flex;
+  justify-content: space-between;
 }

@@ -11,14 +11,55 @@
 <body>
   <div class="banner">The Networking Nerd Dot Com!</div>
 
-  <div class="navbar">
-    <a href="/test-boxes.html">Empty_navbar</a> <a href="/test-boxes.html">Empty_navbar</a> <a
-      href="/test-boxes.html">Empty_navbar</a> <a href="/test-boxes.html">Empty_navbar</a> <a
-      href="/test-boxes.html">Empty_navbar</a>
-  </div>
+  <nav class="navbar">
+    <a href="/test-boxes.html">Empty_navbar</a>
+    <a href="/test-boxes.html">Empty_navbar</a>
+    <a href="/test-boxes.html">Empty_navbar</a>
+    <a href="/test-boxes.html">Empty_navbar</a>
+    <a href="/test-boxes.html">Empty_navbar</a>
+  </nav>
 
-  <div>This is where you'll learn how Spanning Tree Works when I write it.</div>
-  <h1><a class=return href="index.html">Click here to go back to the home page.</a></h1>
-  <footer>© 2025 The Networking Nerd. All rights reserved.</footer>
+  <div class="content">
+
+    <h2>How Spanning Tree Protocol works</h2>
+
+    <div>By now, it should be obvious that we really don't want loops in our networks. We know Spanning Tree Protocol is
+      perfect for eliminating loops, but how exactly does it work?</div>
+
+    <div class="break">There are three IEEE standards of Spanning Tree Protocol:</div>
+
+    <ul>
+      <li>Spanning Tree Protocol (STP) - 802.1D</li>
+      <li>Rapid Spanning Tree Protocol (RSTP) - 802.1w</li>
+      <li>Multiple Spanning Tree Protocol (MSTP) - 802.1s</li>
+    </ul>
+
+    <div>This section is going to focus on the fundamentals of STP. The differences between STP, RSTP, and MSTP will be
+      explained in the next section.</div>
+
+    <div class="break">We are going to look at another scenario: Two switches connected by two links, with a PC
+      connected to each switch. The network engineer who designed this network wanted to build in redundency, if one of
+      the links were to fail, traffic could continue to flow between the switches and PCs.
+    </div>
+
+    <img src="How Spanning Tree works 1.png" style="max-width: 100%; height: auto;">
+
+    <div class="question">
+      <p>Given this scenario, why would we need STP here?</p>
+      <button onclick="HowSpanningTreeWorksQ1(this)">Show Answer</button>
+
+
+
+
+
+    </div>
+  </div>
+  <div class="nav-end">
+    <a class="backforward" href="SpanningTreeIntro.html"><-- What is Spanning Tree Protocol?</a>
+        <div class="backforward">More will be added to this page soon.</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+<footer>© 2025 The Networking Nerd. All rights reserved.</footer>
 
 </html>
